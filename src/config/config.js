@@ -5,7 +5,7 @@ const dbdetails = {
         password: process.env.SQL_PASSWORD,
         database: process.env.SQL_DB,
         host: process.env.SQL_HOST,
-        dialect: 'mysql',
+        dialect: 'mssql',
         port: process.env.SQL_PORT,
     },
 }

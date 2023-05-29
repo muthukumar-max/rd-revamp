@@ -180,4 +180,4 @@ const userhcprep = sequelize.define('userhcprep', {
     freezeTableName: true
 })
 
-module.exports = userhcprep;
+export default userhcprep;

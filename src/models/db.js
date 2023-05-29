@@ -7,7 +7,13 @@ import globalData from '../helpers/globals.js'
 const sequelize = new Sequelize(globalData.sqlDb, globalData.sqlUser, globalData.sqlPassword, {
     host: globalData.sqlHost,
     port: globalData.sqlPort,
-    dialect: 'mysql',
+    dialect: 'mssql',
+    dialectOptions: {
+        options: {
+          encrypt: true, // Enable encryption if required
+          trustServerCertificate: true,
+        },
+    }
 })
 
 if (globalData.sqlPoolEnable === 'true') {
@@ -23,7 +29,7 @@ sequelize
         console.log('Database connection established successfully')
     })
     .catch((error) => {
-        console.log(`Error in mysql database connection ${error}`)
+        console.log(`Error in mssql database connection ${error}`)
     })
 
 export default sequelize

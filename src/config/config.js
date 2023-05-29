@@ -1,4 +1,5 @@
 import 'dotenv/config'
+
 const dbdetails = {
     development: {
         username: process.env.SQL_USER,

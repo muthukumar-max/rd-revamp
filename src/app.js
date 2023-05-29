@@ -73,13 +73,13 @@ app.use(function (req, res, next) {
   next(createError(404))
 })
 
-// process.on('unhandledRejection', (err) => {
-//   console.log('unhandledRejection error occurred -> ', err)
-// })
+process.on('unhandledRejection', (err) => {
+  console.log('unhandledRejection error occurred -> ', err)
+})
 
-// process.on('uncaughtException', (err) => {
-//   console.log('uncaughtException error occurred -> ', err)
-// })
+process.on('uncaughtException', (err) => {
+  console.log('uncaughtException error occurred -> ', err)
+})
 
 server.listen(globalData.port, () => {
   console.log(`Server is running on port ${globalData.port}`)
